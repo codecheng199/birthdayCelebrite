@@ -19,6 +19,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 20px;
     }
 
     header h1 {
@@ -54,15 +55,18 @@
       padding: 20px 40px;
       position: relative;
       width: 50%;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
     }
 
-    .container.left {
-      left: 0;
+    .container.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .container.right {
-      left: 50%;
-    }
+    .container.left { left: 0; }
+    .container.right { left: 50%; }
 
     .content {
       background: rgba(255,255,255,0.1);
@@ -72,9 +76,7 @@
       transition: transform 0.3s;
     }
 
-    .content:hover {
-      transform: translateY(-5px);
-    }
+    .content:hover { transform: translateY(-5px); }
 
     .container::before {
       content: '';
@@ -87,18 +89,43 @@
       z-index: 1;
     }
 
-    .left::before {
-      right: -6px;
-    }
-
-    .right::before {
-      left: -6px;
-    }
+    .left::before { right: -6px; }
+    .right::before { left: -6px; }
 
     img {
       width: 100%;
       border-radius: 8px;
       margin-top: 10px;
+    }
+
+    .letter {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 30px;
+      line-height: 2;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .letter.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .letter h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .final {
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 40px;
+      font-weight: bold;
     }
 
     footer {
@@ -114,17 +141,10 @@
         padding-right: 25px;
       }
 
-      .container.right {
-        left: 0%;
-      }
+      .container.right { left: 0%; }
 
-      .timeline::after {
-        left: 20px;
-      }
-
-      .container::before {
-        left: 15px;
-      }
+      .timeline::after { left: 20px; }
+      .container::before { left: 15px; }
     }
   </style>
 </head>
@@ -141,29 +161,83 @@
 
 <section class="timeline">
 
-  <div class="container left">
-    <div class="content">
-      <h2>2023年4月 · 初见</h2>
-      <p>那天的风很普通，但你不普通。</p>
-      <img src="images/2023-04.jpg" alt="">
-    </div>
-  </div>
+  <div class="container left"><div class="content">
+    <h2>2023年4月 · 初见</h2>
+    <p>那天的风很普通，但你不普通。</p>
+    <img src="images/2023-04.jpg"></div></div>
 
-  <div class="container right">
-    <div class="content">
-      <h2>2023年夏天 · 靠近</h2>
-      <p>聊天变成日常，思念开始有了形状。</p>
-      <img src="images/2023-05.jpg" alt="">
-    </div>
-  </div>
+  <div class="container right"><div class="content">
+    <h2>2023年夏天 · 靠近</h2>
+    <p>聊天变成日常，思念开始有了形状。</p>
+    <img src="images/2023-summer.jpg"></div></div>
 
+  <div class="container left"><div class="content">
+    <h2>2023年冬天 · 确定</h2>
+    <p>冬天很冷，但有你在，一切都变得温暖。</p>
+    <img src="images/2023-winter.jpg"></div></div>
 
+  <div class="container right"><div class="content">
+    <h2>2024年 · 陪伴</h2>
+    <p>那些普通的日子，因为你，都在发光。</p>
+    <img src="images/2024.jpg"></div></div>
 
+  <div class="container left"><div class="content">
+    <h2>2025年 · 更深的牵绊</h2>
+    <p>你不只是恋人，更是我在人间的同路人。</p>
+    <img src="images/2025.jpg"></div></div>
+
+  <div class="container right"><div class="content">
+    <h2>2026年6月 · 第三个年头</h2>
+    <p>未来很长，我希望一直有你。</p>
+    <img src="images/2026.jpg"></div></div>
+
+</section>
+
+<section class="letter" id="letter">
+  <h2>给宝小宝</h2>
+
+  HI，宝小宝：<br><br>
+
+  祝你三十岁快乐啦！也可以只收礼物，继续停留在29岁。<br><br>
+
+  遇见你之前，我的人生更像一个确定性的算法——输入固定，输出固定，连情绪的波动，好像都可以用方差去解释。<br>
+  而你，像一颗随机数种子。轻轻一撒，我所有的预设都散了。<br><br>
+
+  快乐不再是可计算的结果，它变成了完全无法预测的跳跃——<br>
+  可能在某个周四下午，因为你突然说想吃顺德菜；<br>
+  也可能在某个周三凌晨，因为你翻了个身把手搭在我脖子上。<br><br>
+
+  没有规律，不可复现，却每一次都像第一次一样令人心动。<br><br>
+
+  有人说，世间情动，不过是盛夏梅子白瓷汤，碎冰碰壁当啷响。<br>
+  而我更想说，世间情定，是后来那些再普通不过的日子。<br><br>
+
+  是你加班到深夜，我烧水给你泡脚；<br>
+  是你感冒时皱着眉喝药，还要配水果；<br>
+  是某个周末，我们一起窝在沙发上看电视。<br><br>
+
+  这些细碎又安静的时刻，让我越来越确定：<br>
+  我希望以后还能一直这样和你走下去。
+
+  <div class="final">希望接下来的很多很多年，身边都有你 ❤️</div>
 </section>
 
 <footer>
   <p>接下来的时间，我们继续慢慢走 ❤️</p>
 </footer>
+
+<script>
+  const elements = document.querySelectorAll('.container, .letter');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
